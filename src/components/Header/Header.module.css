@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Syncopate');
+.header {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-color: #cc343f;
+}
+.header-logo {
+    position: relative;
+    overflow: hidden;
+    font-size: 26px;
+    padding: 12px;
+}
+
+.header-logo__link {
+    font-size: 32px;
+    /*font-family: 'Monoton', cursive;*/
+    /*font-family: 'Fredericka the Great', cursive;*/
+    font-family: 'Syncopate', sans-serif;
+    font-weight: bold;
+    transition: all .5s ease;
+}
+
+.header-logo__link:last-child {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding-top: 12px;
+    left: -100%;
+    text-align: center;
+    visibility: hidden;
+    background-color: #191C1F;
+    color: #cc343f;
+    transition: all .5s cubic-bezier(.95,-0.6,.73,1.73);
+}
+
+.header-logo:hover .header-logo__link {
+    visibility: hidden;
+}
+
+.header-logo:hover .header-logo__link:last-child {
+    visibility: visible;
+    left: 0;
+}
