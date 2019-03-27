@@ -1,47 +1,69 @@
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes');
 @import url('https://fonts.googleapis.com/css?family=Monoton');
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Syncopate');
+
 .header {
     display: flex;
     position: relative;
     justify-content: space-between;
-    background-color: #cc343f;
-}
-.header-logo {
-    position: relative;
-    overflow: hidden;
-    font-size: 26px;
-    padding: 12px;
+    align-items: center;
+    width: 100%;
+    background: url("../../img/header.jpg") no-repeat 0 -30px/cover;
+    padding: 0 20px 10px;
 }
 
-.header-logo__link {
-    font-size: 32px;
-    /*font-family: 'Monoton', cursive;*/
-    /*font-family: 'Fredericka the Great', cursive;*/
-    font-family: 'Syncopate', sans-serif;
-    font-weight: bold;
-    transition: all .5s ease;
-}
-
-.header-logo__link:last-child {
+.header-overlay {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    top: 0;
-    padding-top: 12px;
-    left: -100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 10%, rgba(255, 255, 255, 1) 100%);
+    z-index: 0;
+}
+
+.header-logo {
+    padding: 12px;
+    font-size: 32px;
+    color: rgba(17, 17, 17, .5);
+    font-family: 'Syncopate', sans-serif;
+    font-weight: bold;
+    z-index: 111;
+    text-shadow: 0 1px 2px rgba(0,0,0,.2);
+    transition: text-shadow .3s ease;
+}
+
+.header-logo:hover {
+    text-shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+
+.header-auth {
+    z-index: 111;
     text-align: center;
-    visibility: hidden;
-    background-color: #191C1F;
-    color: #cc343f;
-    transition: all .5s cubic-bezier(.95,-0.6,.73,1.73);
+    padding: 0 12px;
 }
 
-.header-logo:hover .header-logo__link {
-    visibility: hidden;
+.header-auth__btn {
+    padding: 0 11px;
+    line-height: 32px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: rgba(17, 17, 17, .5);
+    background-color: rgba(250, 250, 250, .2);
+    border: 1px solid rgba(17, 17, 17, .5);
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    transition: all .2s ease-in-out;
+    min-width: 90px;
 }
 
-.header-logo:hover .header-logo__link:last-child {
-    visibility: visible;
-    left: 0;
+.header-auth__btn:hover {
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    border: 1px solid rgba(153, 153, 153, 1);
+    color: rgba(17, 17, 17, .8);
+    background-color: rgba(250, 250, 250, .4);
+}
+
+.header-auth__btn:active {
+    color: rgba(17, 17, 17, .5);
+    background-color: rgba(250, 250, 250, .2);
 }

@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './Header.module.css';
+import SearchBar from "../SearchBar/SearchBar";
+// import headerImg from '../../img/header.jpg';
 
 const Header = () => (
     <header className={styles.header}>
-        <div className={styles['header-logo']}>
-            <a href="/" className={styles['header-logo__link']}>Films4U</a>
-            <a href="/" className={styles['header-logo__link']}>Main</a>
-        </div>
-        <div className="Header-auth">
-            <button>LogIn</button>
+        <div className={styles['header-overlay']}></div>
+        <a href="/" className={styles['header-logo']}>Films4U</a>
+        <SearchBar/>
+        <div className={styles['header-auth']}>
+            <button className={styles['header-auth__btn']}>Log In</button>
         </div>
     </header>
 );
