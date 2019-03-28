@@ -6,9 +6,11 @@
     background-color: rgba(250, 250, 250, .2);
     border-radius: 25px;
     padding: 0 0 0 35px;
-    width: 500px;
     transition: border .3s ease, background-color .3s ease;
     box-shadow: 0 1px 1px rgba(0,0,0, .1);
+    order: 3;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .search:hover {
@@ -40,7 +42,18 @@
     border-radius: 24px;
     border: none;
     width: 100%;
-    padding: 10px 15px;
+    padding: 8px 15px;
     font-size: 16px;
     background-color: transparent;
+}
+
+@media only screen and (min-width: 768px) {
+    .search {
+        width: 500px;
+        order: 2;
+    }
+
+    .search-field {
+        padding: 10px 15px;
+    }
 }
