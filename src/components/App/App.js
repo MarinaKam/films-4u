@@ -7,7 +7,7 @@ import styles from '../SideBar/SideBar.module.css';
 import Main from "../Main/Main";
 import ComingSoon from "../Main/ComingSoon";
 import TopRated from "../Main/TopRated";
-import Popular from "../Main/Popular";
+// import Popular from "../Main/Popular";
 
 class App extends Component {
     state = {
@@ -27,13 +27,12 @@ class App extends Component {
                 </section>
                   <main>
                       <Switch>
-                          <Route path='/' exact component={Main}/>
-                          <Route path='/popular' component={Popular}/>
+                          {/*<Route path='/' exact component={Popular}/>*/}
+                          <Route path='/popular' component={Main}/>
                           <Route path='/top-rated' component={TopRated} />
                           <Route path='/coming-soon' component={ComingSoon}/>
                       </Switch>
                   </main>
-
               </Fragment>
             </BrowserRouter>
         );

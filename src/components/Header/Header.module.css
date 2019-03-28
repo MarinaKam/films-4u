@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
+    height: 115px;
     background: url("../../img/header.jpg") no-repeat 0 0/cover;
     padding: 0 0 20px;
 }
@@ -19,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 10%, rgba(255, 255, 255, 1) 100%);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 10%, rgba(255, 255, 255, 1) 100%);
     z-index: 0;
 }
 
@@ -101,60 +102,6 @@
     color: rgba(17, 17, 17, .8);
 }
 
-/*
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
-
-@media (min-width: 1281px) {
-
-}
-
-/*
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-*/
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-
-}
-
-/*
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) {
-
-}
-
-/*
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-}
-
-/*
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {
-
-}
-
-/*
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-
-@media (min-width: 320px) and (max-width: 480px) {
-
-}
-
 @media only screen and (min-width: 433px) {
     .header-menu {
         display: none;
@@ -184,6 +131,5 @@
 @media only screen and (min-width: 940px) {
     .header-logo {
         position: fixed;
-        padding: 12px;
     }
 }
