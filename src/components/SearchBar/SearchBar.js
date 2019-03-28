@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { withRouter } from 'react-router-dom';
 import styles from './SearchBar.module.css';
 
 class SearchBar extends Component {
-
     state = {
-        searchTerm: ''
+        searchTerm: '',
+        results: []
     };
 
     handleChange = e =>  this.setState({
@@ -14,31 +15,34 @@ class SearchBar extends Component {
     handleSubmit = e => {
         e.preventDefault();
         this.setState({searchTerm: ''});
-        console.log(this.state.searchTerm);
+        this.props.onSubmit(this.state.searchTerm);
+        this.props.history.push('/search');
     };
 
     render() {
         const { searchTerm } = this.state;
         return(
-            <form
-              onSubmit={this.handleSubmit}
-              className={styles.search}
-            >
-                <button
-                    onSubmit={this.handleSubmit}
-                    type='submit'
-                  className={styles['search-btn']}><i className="fas fa-search fa-sm"></i>
-                </button>
-                <input
-                  className={styles['search-field']}
-                  type="search"
-                  placeholder='Search video...'
-                  onChange={this.handleChange}
-                  value={ searchTerm }
-                />
-            </form>
+            <Fragment>
+                <form
+                  onSubmit={this.handleSubmit}
+                  className={styles.search}
+                >
+                    <button
+                        onSubmit={this.handleSubmit}
+                        type='submit'
+                      className={styles['search-btn']}><i className="fas fa-search fa-sm"></i>
+                    </button>
+                    <input
+                      className={styles['search-field']}
+                      type="search"
+                      placeholder='Search video...'
+                      onChange={this.handleChange}
+                      value={ searchTerm }
+                    />
+                </form>
+            </Fragment>
         );
     }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

@@ -9,3 +9,7 @@
 7. Now, finally I want focus on the API. To use it, I had to [signup](https://www.themoviedb.org/account/signup) for an account
    at TMDb and [request an API key](https://developers.themoviedb.org/3/getting-started/introduction).
     
+8. We can now use the `<Main />` component multiple times by passing different properties. The only issue is that we now have 3 lists of movies on the same page.
+9. I'm STUCK on SearchBar with API, can't redirect to the search result page :(
+10. Update. Changed [`<Main />`]() and `<SearchResult />` into the stateless component. All data search and download 
+management has returned into the `<App />`

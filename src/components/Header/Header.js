@@ -26,7 +26,7 @@ class Header extends Component {
                     >
                         <i className="fas fa-bars fa-2x"></i>
                     </button>
-                    <SearchBar/>
+                    <SearchBar onSubmit={this.props.onSubmit}/>
                 </div>
                 <div className={styles['header-auth']}>
                     <button className={styles['header-auth__btn']}>Log In</button>

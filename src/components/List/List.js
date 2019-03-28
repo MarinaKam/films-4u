@@ -8,10 +8,14 @@ const List = ({list}) => {
             <span className={styles['list-item__average']}>{vote_average}</span>
             <div className={styles['list-item__img']}>
                 <a href="/">
-                    <img
-                        alt={title}
-                        src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${poster_path}`}
-                    />
+                    { !poster_path ?
+                        <div className={styles['list-item__holder']}></div>
+                        :
+                        <img
+                            alt={title}
+                            src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${poster_path}`}
+                        />
+                    }
                 </a>
                 <div className={styles['list-img__overlay']}>
                     <div className={styles['list-img__overlay-txt']}>
