@@ -8,7 +8,6 @@
     padding: 0 0 0 35px;
     transition: border .3s ease, background-color .3s ease;
     box-shadow: 0 1px 1px rgba(0,0,0, .1);
-    order: 3;
     width: 80%;
     margin: 0 auto;
 }
@@ -49,11 +48,18 @@
 
 @media only screen and (min-width: 768px) {
     .search {
-        width: 500px;
+        width: 400px;
         order: 2;
     }
 
     .search-field {
         padding: 10px 15px;
+    }
+}
+
+@media only screen and (min-width: 940px) {
+    .search {
+        margin: 0 0 0 250px;
+        width: 400px;
     }
 }
