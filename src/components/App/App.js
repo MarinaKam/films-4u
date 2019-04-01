@@ -49,7 +49,11 @@ class App extends Component {
                           <Route path='/popular' render={() => <Main movies={movies} title='Popular' section={PATH_POPULAR} />}/>
                           <Route path='/top-rated' render={()=><Main  movies={movies} title="Top Rated" section={PATH_TOP_RATED} />}/>
                           <Route path='/coming-soon' render={()=><Main movies={movies} title="Coming Soon" section={PATH_UPCOMING} />}/>
-                          <Route path="/search" render={()=><SearchResult searchResults={searchResults} query={query} title="Search movie" section={PATH_SEARCH} />}/>
+                          <Route path="/search" render={()=><SearchResult
+                              searchResults={searchResults}
+                              query={query}
+                              title="Search movie"
+                              section={PATH_SEARCH} />}/>
                       </Switch>
                   </main>
               </Fragment>
