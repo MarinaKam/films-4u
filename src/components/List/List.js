@@ -31,7 +31,7 @@ class List extends Component {
                     ref={holder => this.refHolder = holder}
                     className={styles['list-item__img']}>
                     { poster_path === null ?
-                        <a href="/" style={{height}}>
+                        <a href="/" style={{height: !height ? '299px' : height}}>
                             <div className={styles['list-item__holder']}></div>
                         </a>
                             :
