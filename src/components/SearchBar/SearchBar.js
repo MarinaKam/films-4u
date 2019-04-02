@@ -4,8 +4,7 @@ import styles from './SearchBar.module.css';
 
 class SearchBar extends Component {
     state = {
-        searchTerm: '',
-        results: []
+        searchTerm: ''
     };
 
     handleChange = e =>  this.setState({
@@ -14,9 +13,14 @@ class SearchBar extends Component {
 
     handleSubmit = async e => {
         e.preventDefault();
-        await this.props.onSubmit(this.state.searchTerm);
+        const {searchTerm} = this.state;
+        // const query = new URLSearchParams(this.props.location.search).get('query');
+        await this.props.onSubmit(searchTerm);
+        await this.props.history.push({
+            pathname: `/search`,
+            search: `?query=${searchTerm}`
+        });
         this.setState({searchTerm: ''});
-        await this.props.history.push('/search');
     };
 
     render() {
