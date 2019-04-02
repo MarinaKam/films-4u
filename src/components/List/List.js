@@ -17,8 +17,8 @@ class List extends Component {
     }
 
     calcHeight = () => {
-        const rect = this.refHolder.clientHeight;
-        this.setState({height: rect});
+        // const rect = this.refHolder.clientHeight;
+        this.setState({height: this.refHolder.clientHeight});
     };
 
     render() {
@@ -30,8 +30,8 @@ class List extends Component {
                 <div
                     ref={holder => this.refHolder = holder}
                     className={styles['list-item__img']}>
-                    { !poster_path ?
-                        <a href="/" style={{height: height}}>
+                    { poster_path === null ?
+                        <a href="/" style={{height}}>
                             <div className={styles['list-item__holder']}></div>
                         </a>
                             :
