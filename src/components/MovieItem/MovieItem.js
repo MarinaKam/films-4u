@@ -1,10 +1,8 @@
-import React, { Component , Fragment} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
-import { API_KEY, PATH_BASE, PATH_MOVIE, YOU_TUBE } from "../../apis";
+import { API_KEY, PATH_BASE, PATH_MOVIE } from "../../apis";
 import styles from './MovieItem.module.css';
-
-//https://www.youtube.com/watch?v=[key]
 
 class MovieItem extends Component {
 
@@ -41,12 +39,11 @@ class MovieItem extends Component {
     isShowClick = (e) => {
         e.preventDefault();
         this.setState({isShow: !this.state.isShow});
-        console.log(this.state.isShow);
     };
 
     render() {
         const { movie, index, isShow } = this.state;
-        const {backdrop_path, poster_path, original_title, overview, release_date, videos, title} = movie;
+        const {backdrop_path, poster_path, overview, videos, title} = movie;
         const results = videos && videos.results;
         // console.log('results', results);
         const movieBgc = {
@@ -60,9 +57,11 @@ class MovieItem extends Component {
             <div className={styles['movie-item']}>
                 {backdrop_path && <div className={styles['movie-bgc']} style={movieBgc}></div>}
                 <div className={styles['movie-cnt']}>
-                    <div className={styles['movie-poster']}>
-                        <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
-                    </div>
+                    {poster_path &&
+                        <div className={styles['movie-poster']}>
+                            <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
+                        </div>
+                    }
                     <div className={styles['movie-data']}>
                         <h1 className={styles['movie-data__title']}>{title}</h1>
                         <h3 className={styles['movie-data__overview']}>Overview</h3>
@@ -76,6 +75,7 @@ class MovieItem extends Component {
                     <div className={!isShow ? styles['movie'] : `${styles['movie']} ${styles['hidden']}`}>
                         <div className={styles['movie-iframe']}>
                             <iframe
+                                title={title}
                                 width="620" height="300"
                                 src={`https://www.youtube.com/embed/${results[index].key}?playlist=${results[index].key}&showinfo=0&modestbranding=1`}
                                 frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen

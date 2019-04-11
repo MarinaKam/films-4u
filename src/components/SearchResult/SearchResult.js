@@ -18,11 +18,6 @@ class SearchResult extends  Component {
                         <List list={ results }/>
                         <div className={ styles.btn }>
                             <Button
-                                className={ page === 1 ? 'btn__hidden' : 'btn__prev' }
-                                onClick={ () => searchMovies(section, page - 1) }
-                                text="Back"
-                            />
-                            <Button
                                 className='btn__next'
                                 onClick={ () => searchMovies(section, page + 1) }
                                 text="Load more"

@@ -10,4 +10,4 @@ export const PATH_UPCOMING = '/upcoming';
 export const PATH_SEARCH = '/search';
 export const DEFAULT_PAGE = 1;
 export const PATH_PAGE = 'page=';
-export const YOU_TUBE = 'https://www.youtube.com/watch?v=';
+export const PATH_DISCOVER = '/discover';

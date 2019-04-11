@@ -9,6 +9,10 @@ main {
     flex: 1 0 auto;
 }
 
+main h1 {
+    margin-left: 10px;
+}
+
 footer {
     display: flex;
     justify-content: space-between;

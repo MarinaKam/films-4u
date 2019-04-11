@@ -7,7 +7,8 @@ import axios from 'axios';
 
 class Main extends Component {
     state = {
-        movies: {}
+        movies: {},
+        loading: true
     };
 
     componentDidMount() {
@@ -20,8 +21,27 @@ class Main extends Component {
 
     getMovies = async (section, page) => {
         const response = await axios.get(`${PATH_BASE}${PATH_MOVIE}${section}?language=en-US&api_key=${API_KEY}&${PATH_PAGE}${page}&include_adult=false`);
-        this.setState({ movies: response.data });
+        this.setMovies(response.data);
     };
+
+    setMovies = (movies) => {
+        const { results, page } = movies;
+
+        const oldResults = page !== 1
+            ? this.state.movies.results
+            : [];
+
+        const updatedResults = [
+            ...oldResults,
+            ...results
+        ];
+
+        this.setState({
+            movies: { results: updatedResults, page },
+            loading: false
+        })
+    };
+
 
     render() {
         const { section, title} = this.props;
@@ -33,12 +53,6 @@ class Main extends Component {
                 <h1>{title}</h1>
                 { movies && <List list={results}/> }
                 <div className={styles.btn}>
-                    <Button
-                        className={page === 1 ? 'btn__hidden' : 'btn__prev'}
-                        onClick={() => this.getMovies(section, page - 1)}
-                        text="Back"
-                    />
-                    {page > 1 && <b>{ page }</b>}
                     <Button
                         className='btn__next'
                         onClick={() => this.getMovies(section, page + 1)}

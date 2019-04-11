@@ -10,23 +10,42 @@ import Main from "../Main/Main";
 import { API_KEY, PATH_BASE, PATH_POPULAR, PATH_MOVIE, PATH_TOP_RATED, PATH_UPCOMING, PATH_SEARCH, PATH_PAGE } from '../../apis';
 import SearchResult from "../SearchResult/SearchResult";
 import MovieItem from "../MovieItem/MovieItem";
+// import Filters from "../Filters/Filters";
+import Discover from "../Discover/Discover";
+
+// import history from '../history';
 
 class App extends Component {
 
-    state = {
-        isActive: false,
-        searchResults: {}
+    defaulFilterstState = {
+        filters: {
+            rating: {
+                min: 5,
+                max: 10
+            },
+            runtime: {
+                min: 45,
+                max: 250
+            },
+            sort_by: {
+                value: 'vote_average',
+                label: 'Rating'
+            },
+            order: {
+                value: 'desc',
+                label: 'Descending'
+            },
+            year: new Date().getFullYear()
+        }
     };
 
-    // componentDidMount() {
-    //     this.getMovies(PATH_POPULAR, DEFAULT_PAGE);
-    // }
+    state = {
+        isActive: false,
+        searchResults: {},
+        // filtersOpen: true,
+        ...this.defaulFilterstState,
 
-    // getMovies = async (section, page) => {
-    //     const response = await axios.get(`${PATH_BASE}${PATH_MOVIE}${section}?language=en-US&api_key=${API_KEY}&${PATH_PAGE}${page}&include_adult=false`);
-    //     // console.log('response', response.data);
-    //     this.setState({ movies: response.data });
-    // };
+    };
 
     searchMovies = async (val, page) => {
         const TERM = val.replace(/\s/g, '+');
@@ -34,10 +53,9 @@ class App extends Component {
         this.setState({searchResults: response.data});
     };
 
-    // getQueryStrings = (term) => {
-    //     const query = new URLSearchParams(term);
-    //     return query.get('query');
-    // };
+    resetFilters = () => this.setState(this.defaulFilterstState);
+
+    updateStateWithFilters = (filters) => this.setState({ filters });
 
     handleClick = () => this.setState({ isActive: !this.state.isActive });
     handleBlur = () => this.setState({ isActive: false });
@@ -49,10 +67,19 @@ class App extends Component {
               <Fragment>
                   <Header onSubmit={this.searchMovies} onClick={this.handleClick} onBlur={this.handleBlur}/>
                   <section className={styles.sidebar}>
-                    <SideBar isActive={this.state.isActive}/>
+                    <SideBar isActive={this.state.isActive}
+                             filters={this.state.filters}
+                             updateFilters={this.updateStateWithFilters}
+                             resetFilters={this.resetFilters}
+                    />
                   </section>
                   <main>
                       <Switch>
+                          <Route exact path="/" render={()=><Discover
+                              title="Discover"
+                              updateFilters={this.updateStateWithFilters}
+                              filters={this.state.filters}
+                          />}/>
                           <Route path='/popular' render={() => <Main title='Popular' section={PATH_POPULAR} />}/>
                           <Route path='/top-rated' render={() => <Main title="Top Rated" section={PATH_TOP_RATED} />}/>
                           <Route path='/coming-soon' render={() => <Main title="Coming Soon" section={PATH_UPCOMING} />}/>

@@ -1,13 +1,13 @@
 .btn {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     margin: 0 auto 30px;
     width: 100%;
 }
 
-.btn__next,
-.btn__prev {
+.btn__next {
     background-color: #ff493f;
     padding: 8px 15px;
     font-size: 16px;
@@ -18,22 +18,6 @@
     -ms-transition: background-color .25s ease-in, border-color .25s ease-in;
     -o-transition: background-color .25s ease-in, border-color .25s ease-in;
     transition: background-color .25s ease-in, border-color .25s ease-in;
-}
-
-.btn__prev {
-    display: block;
-    background-color: #2185d0;
-    border-color: #2185d0;
-}
-
-.btn__hidden {
-    display: none;
-}
-
-.btn__prev:hover,
-.btn__prev:active {
-    background-color: #1678c2;
-    border-color: #1678c2;
 }
 
 .btn__next:hover,

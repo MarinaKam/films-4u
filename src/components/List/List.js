@@ -17,8 +17,6 @@ class List extends Component {
         window.removeEventListener('resize', this.calcHeight);
     }
 
-    // titleURL = (title) => title.replace(/\W+/g, '-').toLowerCase();
-
     calcHeight = () => this.setState({height: this.refHolder.clientHeight});
 
     render() {
@@ -34,8 +32,6 @@ class List extends Component {
                         <Link to={`/movie/${id}`} style={{height: height}}>
                             <div className={styles['list-item__holder']}></div>
                         </Link>
-                        // <a href="/" style={{height: height}}>
-                        // </a>
                         :
                         <Link to={`/movie/${id}`}>
                             <img

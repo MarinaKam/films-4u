@@ -21,7 +21,7 @@
 }
 
 .sidebar-menu.active {
-    max-height: 25em;
+    max-height: 33em;
 }
 
 .sidebar-menu__link {
@@ -30,18 +30,38 @@
     line-height: 3;
     padding: 0 11px;
     font-size: 16px;
-    color: rgba(17, 17, 17, .5);
+    color: rgba(17, 17, 17, .8);
     transition: all .2s ease-in-out;
 }
 
+.sidebar-menu__item a svg {
+    display: inline-block;
+    vertical-align: -1px;
+    /*margin-right: 5px;*/
+}
+
+.sidebar-menu__item a svg path {
+    transition: all .3s ease;
+    fill: rgba(251, 189, 8, .8);
+    /*fill: #fbbd08;*/
+}
+
+.sidebar-menu__item a.is-active svg path {
+    fill: rgba(251, 189, 8, 1);
+}
+
+.sidebar-menu__item a:hover {
+    color: rgba(209, 0, 5, .8);
+}
+
 .sidebar-menu__item a.is-active {
-    color: rgba(209, 0, 5, .7);
+    color: rgba(209, 0, 5, 1);
     border: solid rgba(209, 0, 5, .2);
     border-width: 0 0 1px 0;
     border-radius: 0;
 }
 
-@media (min-width: 433px) and (max-width: 940px) {
+@media (min-width: 489px) and (max-width: 940px) {
     .sidebar-menu__link {
         line-height: 2.1;
         border-radius: 4px;
@@ -57,31 +77,32 @@
     }
 }
 
-@media only screen and (min-width: 433px) {
+@media only screen and (min-width: 489px) {
     .sidebar-menu {
         flex-direction: row;
+        flex-wrap: wrap;
         max-height: inherit;
         overflow: inherit;
     }
-}
 
-@media only screen and (min-width: 940px) {
-    .sidebar {
-        position: relative;
-        display: flex;
+    .sidebar-menu__filters {
         width: 100%;
+        padding: 0 8px;
     }
+
+
 }
 
 @media only screen and (min-width: 940px) {
     .sidebar {
+        display: flex;
         height: 100%;
         width: 250px;
         position: fixed;
         z-index: 1;
         top: 0;
         left: 0;
-        overflow-x: hidden;
+        /*overflow-x: hidden;*/
         padding-top: 121px;
         box-shadow: 0 0 5px 0 rgba(0,0,0,.05);
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 0%, rgba(226, 226, 226, .01) 50%, rgba(255, 255, 255, 1) 100%);
@@ -93,5 +114,11 @@
     .sidebar-menu {
         flex-direction: column;
         justify-content: inherit;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .sidebar-menu__filters {
+        padding: 0;
     }
 }

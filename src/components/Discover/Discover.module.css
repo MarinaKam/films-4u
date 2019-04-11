@@ -1,0 +1,44 @@
+.discover-header {
+    margin-bottom: 0;
+}
+
+.discover-tagline{
+    color: rgba(17, 17, 17, .5);
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 22px;
+}
+
+.sort-order {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.sort-order__item {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.sort-order__label{
+    font-size: 12px;
+    color: rgba(17, 17, 17, .5);
+    margin-right: 20px;
+}
+
+.sort-order__item .Dropdown-arrow{
+    display: none;
+}
+
+.sort-order__item .Dropdown-placeholder{
+    text-decoration: underline;
+}
+
+.sort-order__item .Dropdown-control {
+    /*padding: 6px 20px 6px 10px;*/
+}
+
+.sort-order__item .Dropdown-menu{
+    width: 120%;
+}
