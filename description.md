@@ -13,3 +13,21 @@
 9. I'm STUCK on SearchBar with API, can't redirect to the search result page :(
 10. Update. Changed `<Main />` and `<SearchResult />` into the stateless component. All data search and download management has returned into the `<App />`
 11. Add async into handleSubmit function in the SearchBar.js 
+12.There are still some elements missing but most of it is in place and most importantly, it works)
+13. Now, here are some ideas of features that we could implement to go further:
+    * Filtering and sorting options for movies (rating, date, etc.)
+    * Add loading when loading movies
+    * Single movie page
+    * Use as much as data as possible from the API
+    * Similar/Related movies
+    * Authentification
+    * Profile page
+    * List per user (Favorites, Watch Later, Custom list?)
+    
+14. Divide pages by section
+15. Added buttons Load More and Back to downloads video content 
+16. Create the MovieItem Page with ability to watch trailers (use youtube)
+17.
+
+
+   

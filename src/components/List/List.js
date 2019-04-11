@@ -1,8 +1,9 @@
 import React, { Component }  from 'react';
+import { Link } from 'react-router-dom';
 import styles from './List.module.css';
+// import MovieItem from "../MovieItem/MovieItem";
 
 class List extends Component {
-
     state = {
         height: 299
     };
@@ -16,10 +17,9 @@ class List extends Component {
         window.removeEventListener('resize', this.calcHeight);
     }
 
-    calcHeight = () => {
-        // const rect = this.refHolder.clientHeight;
-        this.setState({height: this.refHolder.clientHeight});
-    };
+    // titleURL = (title) => title.replace(/\W+/g, '-').toLowerCase();
+
+    calcHeight = () => this.setState({height: this.refHolder.clientHeight});
 
     render() {
         const { list } = this.props;
@@ -31,21 +31,23 @@ class List extends Component {
                     ref={holder => this.refHolder = holder}
                     className={styles['list-item__img']}>
                     { poster_path === null ?
-                        <a href="/" style={{height: !height ? '299px' : height}}>
+                        <Link to={`/movie/${id}`} style={{height: height}}>
                             <div className={styles['list-item__holder']}></div>
-                        </a>
-                            :
-                        <a href="/">
+                        </Link>
+                        // <a href="/" style={{height: height}}>
+                        // </a>
+                        :
+                        <Link to={`/movie/${id}`}>
                             <img
                                 alt={title}
                                 src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${poster_path}`}
                             />
-                        </a>
-                        }
+                        </Link>
+                    }
                     <div className={styles['list-img__overlay']}>
                         <div className={styles['list-img__overlay-txt']}>
-                            <a href="/"><i className="fas fa-heart"></i></a>
-                            <a href="/"><i className="fas fa-play"></i></a>
+                            <button><i className="fas fa-heart"></i></button>
+                            <Link to={`/movie/${id}`}><i className="fas fa-play"></i></Link>
                         </div>
                     </div>
                 </div>
@@ -53,11 +55,12 @@ class List extends Component {
             </div>
         ));
         return(
-            <div className={styles['list']}>
-                { item }
-            </div>
-        );
+                <div className={styles['list']}>
+                    { item }
+                </div>
+            );
     }
+
 }
 
 export default List;

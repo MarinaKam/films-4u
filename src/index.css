@@ -1,17 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 *, body {
   box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
-  "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI", "Arial", sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, "San Francisco",*/
+  /*"Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI", "Arial", sans-serif;*/
+  font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
 code {
@@ -22,10 +37,7 @@ code {
 a {
   display: block;
   text-decoration: none;
-  /*padding: 20px 12px;*/
-  /*color: rgba(153, 153, 153, 1);*/
   transition: color .2s ease-in-out,opacity .2s ease-in-out;
-  /*background-color: transparent;*/
   font-weight: 500;
 }
 
@@ -34,7 +46,7 @@ a:hover {
   transition: color .3s ease;
 }
 
-a:hover, a:active {
+a:hover, a:active, a:focus {
   outline: 0;
 }
 

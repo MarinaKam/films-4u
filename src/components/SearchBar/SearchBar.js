@@ -14,7 +14,6 @@ class SearchBar extends Component {
     handleSubmit = async e => {
         e.preventDefault();
         const {searchTerm} = this.state;
-        // const query = new URLSearchParams(this.props.location.search).get('query');
         await this.props.onSubmit(searchTerm);
         await this.props.history.push({
             pathname: `/search`,

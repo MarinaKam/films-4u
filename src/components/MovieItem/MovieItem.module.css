@@ -1,0 +1,142 @@
+.movie-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.movie-bgc {
+    position: absolute;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.movie-bgc:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.movie-cnt {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.movie-poster {
+    width: 100%;
+    max-width: 200px;
+
+}
+
+.movie-poster img {
+    border-radius: 3px;
+    box-shadow: 0 1px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+.movie-data {
+    padding: 0 25px;
+}
+
+.movie-data__title,
+.movie-data__overview,
+.movie-data__txt {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.movie-data__title {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.movie {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 40px auto 0;
+    width: 100%;
+    max-width: 620px;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    transition: height 1s ease-in, opacity 1s ease-in;
+}
+
+.movie-iframe {
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+}
+
+.movie-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.movie-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
+}
+
+.movie-item button {
+    line-height: 2.1;
+    padding: 0 11px;
+    background-color: rgba(250, 250, 250, .2);
+    border: 1px solid rgba(17, 17, 17, .5);
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    transition: all .2s ease-in-out;
+}
+.movie-item button:hover {
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    border: 1px solid rgba(153, 153, 153, 1);
+    color: rgba(17, 17, 17, .8);
+    background-color: rgba(250, 250, 250, .4);
+}
+
+.movie-item button:active {
+    color: rgba(209, 0, 5, .7);
+    border-color: rgba(209, 0, 5, .2);
+    box-shadow: 0 1px 2px rgba(209, 0, 5, .2);
+}
+
+.movie-cnt button {
+    color: rgba(209, 0, 5, 1);
+    border-color: rgba(209, 0, 5, 1);
+    box-shadow: 0 1px 1px rgba(209, 0, 5, .2);
+}
+
+.movie-btn span {
+    font-weight: 700;
+}
+
+.hidden {
+    height: 100%;
+    opacity: 1;
+    transition: height 1s ease-in, opacity 1s ease-in;
+}
+
+@media only screen and (min-width: 940px) {
+    .movie-item {
+        padding: 0 20px;
+        align-items: center;
+    }
+}

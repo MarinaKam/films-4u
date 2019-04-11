@@ -68,12 +68,21 @@
     margin-top: 18px;
 }
 
-.list-img__overlay-txt a {
+.list-img__overlay-txt a,
+.list-img__overlay-txt button {
+    border: none;
+    background-color: transparent;
     color: rgba(255, 255, 255, .8);
     padding: 10px;
+    -webkit-transition: color .25s ease-in;
+    -moz-transition: color .25s ease-in;
+    -ms-transition: color .25s ease-in;
+    -o-transition: color .25s ease-in;
+    transition: color .25s ease-in;
 }
 
-.list-img__overlay-txt a:hover {
+.list-img__overlay-txt a:hover,
+.list-img__overlay-txt button:hover {
     color: red;
 }
 

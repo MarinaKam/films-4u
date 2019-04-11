@@ -28,9 +28,9 @@ class Header extends Component {
                     </button>
                     <SearchBar onSubmit={this.props.onSubmit}/>
                 </div>
-                <div className={styles['header-auth']}>
-                    <button className={styles['header-auth__btn']}>Log In</button>
-                </div>
+                {/*<div className={styles['header-auth']}>*/}
+                {/*    <button className={styles['header-auth__btn']}>Log In</button>*/}
+                {/*</div>*/}
             </header>
         );
     }
