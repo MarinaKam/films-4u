@@ -30,7 +30,7 @@
 17. Let's go with the filter. The basic idea is to filter movies with multiple parameters: date, rating, genres, 
     release date, etc. It seems to me that it would be cool to have some sort of range to be able to filter movies 
     from 2004 to 2008, for example. Let’s `npm install react-input-range` and build our <Filters /> component.
-18. Added filters for the discover page
+18. Added filters in to the discover page
 
 
    
