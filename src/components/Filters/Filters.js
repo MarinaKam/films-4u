@@ -15,7 +15,6 @@ class Filters extends Component {
     render() {
         const { filters, filtersOpen } = this.props;
         const rangeDate = (start, end) => Array.from({length: (end - start)}, (value, key) => key + start+1).reverse();
-        // console.log('filters', filters);
         return (
             <div className={`${styles['filters']} ${filtersOpen ? styles['is-open'] : null}`}>
                 <div className={styles['filters-header']}>

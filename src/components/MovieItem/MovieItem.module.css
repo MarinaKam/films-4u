@@ -29,15 +29,17 @@
 
 .movie-cnt {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
+    justify-content: space-between;
     align-items: flex-start;
     width: 100%;
 }
 
 .movie-poster {
     width: 100%;
-    max-width: 200px;
-
+    max-width: 280px;
+    margin: 0 auto;
 }
 
 .movie-poster img {
@@ -132,6 +134,12 @@
     height: 100%;
     opacity: 1;
     transition: height 1s ease-in, opacity 1s ease-in;
+}
+
+@media only screen and (min-width: 600px) {
+    .movie-cnt {
+        flex-wrap: nowrap;
+    }
 }
 
 @media only screen and (min-width: 940px) {

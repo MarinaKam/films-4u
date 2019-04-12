@@ -56,6 +56,7 @@ class MovieItem extends Component {
         return(
             <div className={styles['movie-item']}>
                 {backdrop_path && <div className={styles['movie-bgc']} style={movieBgc}></div>}
+                <h1 className={styles['movie-data__title']}>{title}</h1>
                 <div className={styles['movie-cnt']}>
                     {poster_path &&
                         <div className={styles['movie-poster']}>
@@ -63,7 +64,6 @@ class MovieItem extends Component {
                         </div>
                     }
                     <div className={styles['movie-data']}>
-                        <h1 className={styles['movie-data__title']}>{title}</h1>
                         <h3 className={styles['movie-data__overview']}>Overview</h3>
                         <p className={styles['movie-data__txt']}>{overview}</p>
                         {videos && <h3 className={styles['movie-data__overview']}>Total number of trailers {results.length}</h3>}
