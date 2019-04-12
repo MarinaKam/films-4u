@@ -2,22 +2,32 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: stretch;
     width: 100%;
     margin: 30px auto;
 }
 
 .list-item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     position: relative;
-    width: 50%;
-    padding: 14px;
+    width: 48%;
+    padding: 5px;
+    margin: 10px 1%;
+    border: 1px solid rgba(211, 211, 211, .2);
 }
 
 .list-item__img {
+    flex: 1;
+    width: 100%;
     position: relative;
-    box-shadow: 0 1px 6px 1px rgba(0,0,0,.3);
-    overflow: hidden;
     margin: 0 auto 10px;
+}
+
+.list-item__link {
+    height: auto;
+    box-shadow: 0 1px 6px 0px rgba(0,0,0,.3);
     -webkit-transition: box-shadow .25s ease-in, transform .2s ease-in;
     -moz-transition: box-shadow .25s ease-in, transform .2s ease-in;
     -ms-transition: box-shadow .25s ease-in, transform .2s ease-in;
@@ -25,38 +35,40 @@
     transition: box-shadow .25s ease-in, transform .2s ease-in;
 }
 
-.list-item__holder {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: lightgrey;
+.list-item__empt-link {
+    height: 91%;
+    background-color: rgba(211, 211, 211, .7);
 }
 
-.list-item__holder:before{
-    content: "No image available";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.list-item__holder {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-item__holder p{
+    width: 60%;
     line-height: 24px;
     border: 1px dotted #b5b5b5;
-    padding: 10px;
     color: #b5b5b5;
     text-align: center;
 }
 
 .list-img__overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
     overflow: hidden;
     width: 100%;
     height: 0;
-    transition: height .25s ease-in;
+    -webkit-transition: height .25s ease-in, transform .2s ease-in;
+    -moz-transition: height .25s ease-in, transform .2s ease-in;
+    -ms-transition: height .25s ease-in, transform .2s ease-in;
+    -o-transition: height .25s ease-in, transform .2s ease-in;
+    transition: height .25s ease-in, transform .2s ease-in;
 }
 
 .list-img__overlay-txt {
@@ -65,7 +77,7 @@
     align-items: center;
     color: white;
     text-align: center;
-    margin-top: 18px;
+    margin-top: 8px;
 }
 
 .list-img__overlay-txt a,
@@ -86,14 +98,17 @@
     color: red;
 }
 
-.list-item__img:hover {
+.list-item__img:hover .list-item__link {
     box-shadow: 0 1px 6px 1px rgba(0,0,0,.6);
     -webkit-transform: scale(1.01);
     transform: scale(1.01);
+
 }
 
 .list-item__img:hover .list-img__overlay {
     height: 60px;
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
 }
 
 .list-item__average {
@@ -101,8 +116,8 @@
     color: white;
     width: 30px;
     height: 30px;
-    top: 22px;
-    right: 5px;
+    top: 15px;
+    right: -5px;
     border: 1px solid red;
     background-color: red;
     border-radius: 50%;
@@ -110,6 +125,7 @@
     text-align: center;
     font-size: 12px;
     z-index: 1;
+    flex: 0;
 }
 
 
@@ -126,16 +142,77 @@
     color: red;
 }
 
-@media only screen and (min-width: 481px) {
-
+@media only screen and (min-width: 328px) {
+    .list-item__empt-link {
+        height: 91.5%;
+    }
 }
+
+@media only screen and (min-width: 410px) {
+    .list-item__empt-link {
+        height: 99%;
+    }
+}
+
+@media only screen and (min-width: 467px) {
+    .list-item__empt-link {
+        height: 98%;
+    }
+}
+
+@media only screen and (min-width: 479px) {
+    .list-item__empt-link {
+        height: 94.5%;
+    }
+}
+
+@media only screen and (min-width: 639px) {
+    .list-item__empt-link {
+        height: 95.6%;
+    }
+}
+
 @media only screen and (min-width: 723px) {
     .list-item {
-        width: 33%;
+        width: 31%;
+    }
+
+    .list-item__empt-link {
+        height: 94.4%;
     }
 }
 @media only screen and (min-width: 1120px) {
     .list-item {
-        width: 20%;
+        width: 18%;
+    }
+}
+
+@media only screen and (min-width: 1135px) {
+    .list-item__empt-link {
+        height: 92.5%;
+    }
+}
+
+@media only screen and (min-width: 1279px) {
+    .list-item__empt-link {
+        height: 99%;
+    }
+}
+
+@media only screen and (min-width: 1370px) {
+    .list-item__empt-link {
+        height: 94.4%;
+    }
+}
+
+@media only screen and (min-width: 1690px) {
+    .list-item__empt-link {
+        height: 96%;
+    }
+}
+
+@media only screen and (min-width: 1900px) {
+    .list-item__empt-link {
+        height: 99%;
     }
 }
