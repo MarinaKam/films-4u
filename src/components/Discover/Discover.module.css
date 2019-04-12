@@ -38,10 +38,6 @@
     text-decoration: underline;
 }
 
-.sort-order__item .Dropdown-control {
-    /*padding: 6px 20px 6px 10px;*/
-}
-
 .sort-order__item .Dropdown-menu{
     width: 120%;
 }

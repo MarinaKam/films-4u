@@ -37,13 +37,11 @@
 .sidebar-menu__item a svg {
     display: inline-block;
     vertical-align: -1px;
-    /*margin-right: 5px;*/
 }
 
 .sidebar-menu__item a svg path {
     transition: all .3s ease;
     fill: rgba(251, 189, 8, .8);
-    /*fill: #fbbd08;*/
 }
 
 .sidebar-menu__item a.is-active svg path {
@@ -62,6 +60,11 @@
 }
 
 @media (min-width: 489px) and (max-width: 940px) {
+
+    .sidebar-menu {
+        margin-top: 15px;
+    }
+
     .sidebar-menu__link {
         line-height: 2.1;
         border-radius: 4px;
@@ -102,7 +105,6 @@
         z-index: 1;
         top: 0;
         left: 0;
-        /*overflow-x: hidden;*/
         padding-top: 121px;
         box-shadow: 0 0 5px 0 rgba(0,0,0,.05);
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 0%, rgba(226, 226, 226, .01) 50%, rgba(255, 255, 255, 1) 100%);
